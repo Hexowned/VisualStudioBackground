@@ -10,7 +10,7 @@ using VisualStudioBackground.Settings;
 
 #endregion USING_DIRECTIVES
 
-namespace VisualStudioBackground.Application
+namespace VisualStudioBackground.App
 {
     #region ADORNMENT_FACTORY
 

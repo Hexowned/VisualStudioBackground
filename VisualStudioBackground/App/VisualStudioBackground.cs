@@ -13,7 +13,7 @@ using VisualStudioBackground.Settings;
 
 #endregion USING_DIRECTIVES
 
-namespace VisualStudioBackground.Application
+namespace VisualStudioBackground.App
 {
     public class VisualStudioBackground
     {
