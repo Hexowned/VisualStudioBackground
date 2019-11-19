@@ -9,12 +9,12 @@ using EnvDTE80;
 
 namespace VisualStudioBackground.Settings
 {
-    public class Settings
+    public class Setting
     {
-        private static readonly Settings instance = new Settings();
-        private static readonly string ConfigurationFile = "configuration.txt";
-        private const string DefaultBackgroundImage = "Images\\background.jpg";
-        private const string DefaultBackgroundFolder = "Images";
+        private static readonly Setting instance = new Setting();
+        private static readonly string ConfigurationFile = "Resources\\configuration.txt";
+        private const string DefaultBackgroundImage = "Resources\\background.jpg";
+        private const string DefaultBackgroundFolder = "Resources";
 
         public ImageBackgroundType ImageBackgroundType { get; set; }
         public double Opacity { get; set; }
@@ -30,19 +30,19 @@ namespace VisualStudioBackground.Settings
 
         public WeakEvent<EventArgs> OnChanged = new WeakEvent<EventArgs>();
 
-        public static Settings Instance
+        public static Setting Instance
         {
             get { return instance; }
         }
 
-        public Settings()
+        public Setting()
         {
             // TODO:
         }
 
-        public static Settings Initialize(IServiceProvider serviceProvider)
+        public static Setting Initialize(IServiceProvider serviceProvider)
         {
-            var settings = Settings.Instance;
+            var settings = Setting.Instance;
             if (settings.ServiceProvider != serviceProvider)
             {
                 settings.ServiceProvider = serviceProvider;
@@ -52,7 +52,7 @@ namespace VisualStudioBackground.Settings
                 settings.Load();
             } catch
             {
-                return Settings.Deserialize();
+                return Setting.Deserialize();
             }
 
             return settings;
@@ -60,7 +60,7 @@ namespace VisualStudioBackground.Settings
 
         public void Serialize()
         {
-            var configuration = JsonSerializer<Settings>.Serialize(this);
+            var configuration = JsonSerializer<Setting>.Serialize(this);
             var assemblyLocation = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             var configurationPath = Path.Combine(string.IsNullOrEmpty(assemblyLocation) ? "" : assemblyLocation, ConfigurationFile);
 
@@ -71,7 +71,7 @@ namespace VisualStudioBackground.Settings
             }
         }
 
-        public static Settings Deserialize()
+        public static Setting Deserialize()
         {
             var assemblyLocation = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             var configurationPath = Path.Combine(string.IsNullOrEmpty(assemblyLocation) ? "" : assemblyLocation, ConfigurationFile);
@@ -83,20 +83,20 @@ namespace VisualStudioBackground.Settings
                 s.Close();
             }
 
-            var ret = JsonSerializer<Settings>.Deserialize(configuration);
+            var ret = JsonSerializer<Setting>.Deserialize(configuration);
             ret.BackgroundImageAbsolutePath = ToFullPath(ret.BackgroundImageAbsolutePath, DefaultBackgroundImage);
 
             return ret;
         }
 
-        public static async Task<Settings> InitializeAsync(IServiceProvider serviceProvider)
+        public static async Task<Setting> InitializeAsync(IServiceProvider serviceProvider)
         {
-            var settings = Settings.Instance;
+            var settings = Setting.Instance;
             if (settings.ServiceProvider != serviceProvider)
             {
                 settings.ServiceProvider = serviceProvider;
             }
-            try { await settings.LoadAsync(); } catch { return Settings.Deserialize(); }
+            try { await settings.LoadAsync(); } catch { return Setting.Deserialize(); }
 
             return settings;
         }
