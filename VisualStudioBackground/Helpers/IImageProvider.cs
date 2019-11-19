@@ -22,6 +22,7 @@ namespace VisualStudioBackground.Helpers
     {
         private ProviderHolder()
         {
+            // empty constructor
         }
 
         public List<IImageProvider> Providers { get; private set; }

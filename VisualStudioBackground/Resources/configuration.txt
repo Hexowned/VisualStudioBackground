@@ -1,1 +1,12 @@
-﻿
+﻿{
+	"BackgroundImageAbsolutePath": "",
+	"Extensions": ".png, .jpg",
+	"ImageBackgroundType": 0,
+	"Opacity": 0.35,
+	"ImageStretch": 0,
+	"PositionHorizontal": 1,
+	"PositionVertical": 1,
+	"MaxWidth": 0,
+	"MaxHeight": 0,
+	"ExpandToFillIDE": false
+}
