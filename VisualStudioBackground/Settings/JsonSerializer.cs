@@ -7,11 +7,11 @@ using System.Text;
 
 namespace VisualStudioBackground.Settings
 {
-    public static class JsonSerializer<T> where T : class
+    public static class JsonSerializer<TType> where TType : class
     {
-        public static string Serialize(T instance)
+        public static string Serialize(TType instance)
         {
-            var serializer = new DataContractJsonSerializer(typeof(T));
+            var serializer = new DataContractJsonSerializer(typeof(TType));
             using (var stream = new MemoryStream())
             {
                 serializer.WriteObject(stream, instance);
@@ -20,13 +20,13 @@ namespace VisualStudioBackground.Settings
             }
         }
 
-        public static T DeSerialize(string json)
+        public static TType Deserialize(string json)
         {
             using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(json)))
             {
-                var serializer = new DataContractJsonSerializer(typeof(T));
+                var serializer = new DataContractJsonSerializer(typeof(TType));
 
-                return serializer.ReadObject(stream) as T;
+                return serializer.ReadObject(stream) as TType;
             }
         }
     }
