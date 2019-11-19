@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VisualStudioBackground.Localized
-{
-
-
+namespace VisualStudioBackground.Localized {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,192 +22,247 @@ namespace VisualStudioBackground.Localized
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResLocalized
-    {
-
+    internal class ResLocalized {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResLocalized()
-        {
+        internal ResLocalized() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if (object.ReferenceEquals(resourceMan, null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VisualStudioBackground.Localized.ResLocalized", typeof(ResLocalized).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Image of background type.
+        ///   Looks up a localized string similar to Image background type..
         /// </summary>
-        internal static string BackgroundType
-        {
-            get
-            {
+        internal static string BackgroundType {
+            get {
                 return ResourceManager.GetString("BackgroundType", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Directory path.
+        ///   Looks up a localized string similar to Type of background image.
+        ///This currently will only support single image displays that displays the specified image from the path..
         /// </summary>
-        internal static string DirectoryPathType
-        {
-            get
-            {
-                return ResourceManager.GetString("DirectoryPathType", resourceCulture);
+        internal static string BackgroundTypeDesc {
+            get {
+                return ResourceManager.GetString("BackgroundTypeDesc", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Expand to fill the IDE.
+        ///   Looks up a localized string similar to Expand to IDE.
         /// </summary>
-        internal static string ExpandToFillIDEType
-        {
-            get
-            {
+        internal static string ExpandToFillIDEType {
+            get {
                 return ResourceManager.GetString("ExpandToFillIDEType", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If true, background image expands to fill IDE.
+        ///If false, background image will be set to text editor background.
+        ///(false is the default value).
+        /// </summary>
+        internal static string ExpandToFillIDETypeDesc {
+            get {
+                return ResourceManager.GetString("ExpandToFillIDETypeDesc", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to File path.
         /// </summary>
-        internal static string FilePathType
-        {
-            get
-            {
+        internal static string FilePathType {
+            get {
                 return ResourceManager.GetString("FilePathType", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Horizontal Alignment.
+        ///   Looks up a localized string similar to Background image file path..
         /// </summary>
-        internal static string HorizontalAlignmentType
-        {
-            get
-            {
+        internal static string FilePathTypeDesc {
+            get {
+                return ResourceManager.GetString("FilePathTypeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Horizontal alignment..
+        /// </summary>
+        internal static string HorizontalAlignmentType {
+            get {
                 return ResourceManager.GetString("HorizontalAlignmentType", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image position on the horizontal axis.
+        /// </summary>
+        internal static string HorizontalAlignmentTypeDesc {
+            get {
+                return ResourceManager.GetString("HorizontalAlignmentTypeDesc", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Image.
         /// </summary>
-        internal static string Image
-        {
-            get
-            {
+        internal static string Image {
+            get {
                 return ResourceManager.GetString("Image", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Image extensions.
         /// </summary>
-        internal static string ImageExtensionsType
-        {
-            get
-            {
+        internal static string ImageExtensionsType {
+            get {
                 return ResourceManager.GetString("ImageExtensionsType", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Image Stretch.
+        ///   Looks up a localized string similar to Only images with these extensions are supported and will be displayed..
         /// </summary>
-        internal static string ImageStretchType
-        {
-            get
-            {
+        internal static string ImageExtensionsTypeDesc {
+            get {
+                return ResourceManager.GetString("ImageExtensionsTypeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image stretch.
+        /// </summary>
+        internal static string ImageStretchType {
+            get {
                 return ResourceManager.GetString("ImageStretchType", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A value that specifies how the content of this
+        ///image stretches to fit the editor. The image
+        ///stretch property accepts the following values:
+        ///None, Uniform, UniformToFill, Fill.
+        /// </summary>
+        internal static string ImageStretchTypeDesc {
+            get {
+                return ResourceManager.GetString("ImageStretchTypeDesc", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Layout.
         /// </summary>
-        internal static string Layout
-        {
-            get
-            {
+        internal static string Layout {
+            get {
                 return ResourceManager.GetString("Layout", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Max Height.
+        ///   Looks up a localized string similar to Max height.
         /// </summary>
-        internal static string MaxHeightType
-        {
-            get
-            {
+        internal static string MaxHeightType {
+            get {
                 return ResourceManager.GetString("MaxHeightType", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Max Width.
+        ///   Looks up a localized string similar to Maximum height in pixels that the image can fill the view..
         /// </summary>
-        internal static string MaxWidthType
-        {
-            get
-            {
+        internal static string MaxHeightTypeDesc {
+            get {
+                return ResourceManager.GetString("MaxHeightTypeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max width.
+        /// </summary>
+        internal static string MaxWidthType {
+            get {
                 return ResourceManager.GetString("MaxWidthType", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum width in pixels that the image can fill in the view..
+        /// </summary>
+        internal static string MaxWidthTypeDesc {
+            get {
+                return ResourceManager.GetString("MaxWidthTypeDesc", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Opacity.
         /// </summary>
-        internal static string OpacityType
-        {
-            get
-            {
+        internal static string OpacityType {
+            get {
                 return ResourceManager.GetString("OpacityType", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Vertical Alignment.
+        ///   Looks up a localized string similar to Background image opacity.
+        ///Supports the following value ranges:
+        ///0.00 &lt;= 1.00.
         /// </summary>
-        internal static string VerticalAlignmentType
-        {
-            get
-            {
+        internal static string OpacityTypeDesc {
+            get {
+                return ResourceManager.GetString("OpacityTypeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vertical alignment..
+        /// </summary>
+        internal static string VerticalAlignmentType {
+            get {
                 return ResourceManager.GetString("VerticalAlignmentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image position on the vertical axis..
+        /// </summary>
+        internal static string VerticalAlignmentTypeDesc {
+            get {
+                return ResourceManager.GetString("VerticalAlignmentTypeDesc", resourceCulture);
             }
         }
     }

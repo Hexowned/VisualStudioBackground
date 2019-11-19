@@ -118,56 +118,77 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BackgroundType" xml:space="preserve">
-    <value>Image of background type</value>
-    <comment>Displays the specified image.</comment>
+    <value>Image background type.</value>
   </data>
-  <data name="DirectoryPathType" xml:space="preserve">
-    <value>Directory path</value>
-    <comment>Background image directory path.</comment>
+  <data name="BackgroundTypeDesc" xml:space="preserve">
+    <value>Type of background image.
+This currently will only support single image displays that displays the specified image from the path.</value>
   </data>
   <data name="ExpandToFillIDEType" xml:space="preserve">
-    <value>Expand to fill the IDE</value>
-    <comment>If true, background image expands to fill the IDE. If false, background image is set to text editor background.
-(false is default value)</comment>
+    <value>Expand to IDE</value>
+  </data>
+  <data name="ExpandToFillIDETypeDesc" xml:space="preserve">
+    <value>If true, background image expands to fill IDE.
+If false, background image will be set to text editor background.
+(false is the default value)</value>
   </data>
   <data name="FilePathType" xml:space="preserve">
     <value>File path</value>
-    <comment>Background image file path.</comment>
+  </data>
+  <data name="FilePathTypeDesc" xml:space="preserve">
+    <value>Background image file path.</value>
   </data>
   <data name="HorizontalAlignmentType" xml:space="preserve">
-    <value>Horizontal Alignment</value>
-    <comment>Image position on the horizontal axis.</comment>
+    <value>Horizontal alignment.</value>
+  </data>
+  <data name="HorizontalAlignmentTypeDesc" xml:space="preserve">
+    <value>Image position on the horizontal axis</value>
   </data>
   <data name="Image" xml:space="preserve">
     <value>Image</value>
-    <comment>Image</comment>
   </data>
   <data name="ImageExtensionsType" xml:space="preserve">
     <value>Image extensions</value>
-    <comment>Only images with this extension(s) will be shown.</comment>
+  </data>
+  <data name="ImageExtensionsTypeDesc" xml:space="preserve">
+    <value>Only images with these extensions are supported and will be displayed.</value>
   </data>
   <data name="ImageStretchType" xml:space="preserve">
-    <value>Image Stretch</value>
-    <comment>A value that specifies how the content of this image stretches to fit the editor. The image stretch property accepts the following values: None, Uniform, UniformToFill, Fill</comment>
+    <value>Image stretch</value>
+  </data>
+  <data name="ImageStretchTypeDesc" xml:space="preserve">
+    <value>A value that specifies how the content of this
+image stretches to fit the editor. The image
+stretch property accepts the following values:
+None, Uniform, UniformToFill, Fill</value>
   </data>
   <data name="Layout" xml:space="preserve">
     <value>Layout</value>
-    <comment>Layout</comment>
   </data>
   <data name="MaxHeightType" xml:space="preserve">
-    <value>Max Height</value>
-    <comment>Maximum height in pixels that the image can fill in the view.</comment>
+    <value>Max height</value>
+  </data>
+  <data name="MaxHeightTypeDesc" xml:space="preserve">
+    <value>Maximum height in pixels that the image can fill the view.</value>
   </data>
   <data name="MaxWidthType" xml:space="preserve">
-    <value>Max Width</value>
-    <comment>Maximum width in pixels that the image can fill in the view.</comment>
+    <value>Max width</value>
+  </data>
+  <data name="MaxWidthTypeDesc" xml:space="preserve">
+    <value>Maximum width in pixels that the image can fill in the view.</value>
   </data>
   <data name="OpacityType" xml:space="preserve">
     <value>Opacity</value>
-    <comment>Background image opacity. (value within the ranges of 0.00 &lt;= 1.00)</comment>
+  </data>
+  <data name="OpacityTypeDesc" xml:space="preserve">
+    <value>Background image opacity.
+Supports the following value ranges:
+0.00 &lt;= 1.00</value>
   </data>
   <data name="VerticalAlignmentType" xml:space="preserve">
-    <value>Vertical Alignment</value>
-    <comment>Image position on the vertical axis.</comment>
+    <value>Vertical alignment.</value>
+  </data>
+  <data name="VerticalAlignmentTypeDesc" xml:space="preserve">
+    <value>Image position on the vertical axis.</value>
   </data>
 </root>

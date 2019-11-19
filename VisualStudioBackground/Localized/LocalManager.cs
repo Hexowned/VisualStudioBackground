@@ -1,5 +1,6 @@
 ﻿#region USING_DIRECTIVES
 
+using System;
 using System.ComponentModel;
 using System.Resources;
 
@@ -21,6 +22,7 @@ namespace VisualStudioBackground.Localized
             return _resourceManager;
         }
 
+        [AttributeUsage(AttributeTargets.All)]
         internal class LocalizedDescriptionAttribute : DescriptionAttribute
         {
             private static string Localize(string _key)
@@ -35,6 +37,7 @@ namespace VisualStudioBackground.Localized
             }
         }
 
+        [AttributeUsage(AttributeTargets.All)]
         internal class LocalizedCategoryAttribute : CategoryAttribute
         {
             private static string Localize(string _key)
@@ -49,6 +52,10 @@ namespace VisualStudioBackground.Localized
             }
         }
 
+        [AttributeUsage(AttributeTargets.Class
+            | AttributeTargets.Method
+            | AttributeTargets.Property
+            | AttributeTargets.Event)]
         internal class LocalizedDisplayNameAttribute : DisplayNameAttribute
         {
             private static string Localize(string _key)
