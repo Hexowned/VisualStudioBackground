@@ -1,7 +1,9 @@
 ﻿#region USING_DIRECTIVES
+
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-#endregion
+
+#endregion USING_DIRECTIVES
 
 namespace VisualStudioBackground.Helpers
 {

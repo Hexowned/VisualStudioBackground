@@ -1,22 +1,28 @@
 ﻿#region USING_DIRECTIVES
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 using VisualStudioBackground.Settings;
-#endregion
+
+#endregion USING_DIRECTIVES
 
 namespace VisualStudioBackground.Helpers
 {
     public interface IImageProvider
     {
-        BitmapSource GetBitMap();
+        BitmapSource GetBitmap();
+
         event EventHandler NewImageAvailable;
+
         ImageBackgroundType ProviderType { get; }
     }
 
     public class ProviderHolder
     {
-        private ProviderHolder() { }
+        private ProviderHolder()
+        {
+        }
 
         public List<IImageProvider> Providers { get; private set; }
 

@@ -1,9 +1,11 @@
 ﻿#region USING_DIRECTIVES
+
 using System;
 using System.IO;
 using System.Windows.Media.Imaging;
 using VisualStudioBackground.Settings;
-#endregion
+
+#endregion USING_DIRECTIVES
 
 namespace VisualStudioBackground.Helpers
 {
@@ -11,6 +13,7 @@ namespace VisualStudioBackground.Helpers
     {
         private BitmapImage _bitmap;
         private Setting _setting;
+
         public event EventHandler NewImageAvailable;
 
         public ImageProvider(Setting setting)
@@ -40,12 +43,8 @@ namespace VisualStudioBackground.Helpers
             if (_setting.ImageStretch == ImageStretch.None && (_bitmap.Width != _bitmap.PixelHeight || _bitmap.Height != _bitmap.PixelHeight))
             {
                 return BitmapTool.ConvertToDpi96(_bitmap);
-            } else { return _bitmap; }
-        }
-
-        public BitmapSource GetBitMap()
-        {
-            throw new NotImplementedException(); // I shouldn't need this but otherwise it threw an error saying I did not implement GetBitmap even thought its right above...
+            }
+            else { return _bitmap; }
         }
 
         private void LoadImage()
@@ -67,7 +66,8 @@ namespace VisualStudioBackground.Helpers
                 {
                     _bitmap = BitmapTool.EnsureMaxWidthHeight(_bitmap, _setting.MaxWidth, _setting.MaxHeight);
                 }
-            } else { _bitmap = null; }
+            }
+            else { _bitmap = null; }
         }
 
         public ImageBackgroundType ProviderType
