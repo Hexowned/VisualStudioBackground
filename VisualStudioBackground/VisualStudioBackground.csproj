@@ -103,6 +103,12 @@
     <Compile Include="Helpers\IImageProvider.cs" />
     <Compile Include="Helpers\ImageProvider.cs" />
     <Compile Include="Helpers\BitmapTool.cs" />
+    <Compile Include="Localized\LocalManager.cs" />
+    <Compile Include="Localized\ResLocalized.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResLocalized.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\JsonSerializer.cs" />
     <Compile Include="Settings\Setting.cs" />
@@ -113,6 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\configuration.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localized\ResLocalized.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResLocalized.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
