@@ -13,7 +13,7 @@ using Task = System.Threading.Tasks.Task;
 
 #endregion USING_DIRECTIVES
 
-namespace VisualStudioBackground.App
+namespace VisualStudioBackground
 {
     public sealed class VisualStudioBackgroundPackage : AsyncPackage
     {

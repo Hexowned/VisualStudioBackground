@@ -44,6 +44,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -117,9 +119,9 @@
     <Compile Include="App\OptionPageGrid.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="App\VisualStudioBackground.cs" />
-    <Compile Include="App\VisualStudioBackgroundFactory.cs" />
-    <Compile Include="App\VisualStudioBackgroundPackage.cs" />
+    <Compile Include="VisualStudioBackground.cs" />
+    <Compile Include="VisualStudioBackgroundFactory.cs" />
+    <Compile Include="VisualStudioBackgroundPackage.cs" />
     <Compile Include="Helpers\DependencyObjectExtensions.cs" />
     <Compile Include="Helpers\IImageProvider.cs" />
     <Compile Include="Helpers\ImageProvider.cs" />
