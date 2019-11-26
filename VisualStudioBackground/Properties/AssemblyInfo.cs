@@ -1,5 +1,5 @@
+﻿using System;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("VisualStudioBackground")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
+[assembly: CLSCompliant(false)]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
