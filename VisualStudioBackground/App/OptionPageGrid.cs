@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.Globalization;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using VisualStudioBackground.Localized;
@@ -15,8 +16,24 @@ using VisualStudioBackground.Settings;
 
 namespace VisualStudioBackground.App
 {
+    [ClassInterface(ClassInterfaceType.AutoDual)]
+    [CLSCompliant(false), ComVisible(true)]
+    [Guid("44877e19-3fa9-497e-8cd3-f84bf19dfd8d")]
     public class OptionPageGrid : DialogPage
     {
+        public OptionPageGrid()
+        {
+            BackgroundImageAbsolutePath = "Resources\\background.jpg";
+            Opacity = 0.35;
+            PositionHorizontal = PositionH.Right;
+            PositionVertical = PositionV.Bottom;
+            Extensions = ".png, .jpg";
+            MaxWidth = 0;
+            MaxHeight = 0;
+            ImageStretch = ImageStretch.None;
+            ExpandToFillIDE = false;
+        }
+
         [LocalManager.LocalizedCategory("Image")]
         [LocalManager.LocalizedDisplayName("BackgroundType")]
         [LocalManager.LocalizedDescription("BackgroundTypeDesc")]
@@ -76,28 +93,13 @@ namespace VisualStudioBackground.App
         [LocalManager.LocalizedDescription("MaxWidthTypeDesc")]
         public int MaxWidth { get; set; }
 
-        public OptionPageGrid()
-        {
-            BackgroundImageAbsolutePath = "Resources\\background.jpg";
-            Opacity = 0.35;
-            PositionHorizontal = PositionH.Right;
-            PositionVertical = PositionV.Bottom;
-            Extensions = ".png, .jpg";
-            MaxWidth = 0;
-            MaxHeight = 0;
-            ImageStretch = ImageStretch.None;
-            ExpandToFillIDE = false;
-        }
-
         protected override void OnApply(PageApplyEventArgs e)
         {
             try
             {
                 Setting.Instance.OnApplyChanged();
-            }
-            catch
+            } catch
             {
-                // nothing for now
             }
             base.OnApply(e);
         }
@@ -152,7 +154,6 @@ namespace VisualStudioBackground.App
         public PositionHTypeConverter()
             : base(typeof(PositionH))
         {
-            // empty constructor
         }
 
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -181,8 +182,7 @@ namespace VisualStudioBackground.App
             {
                 string result = null;
 
-                if ((int)value == 0) { result = "Left"; }
-                else if ((int)value == 1) { result = "Right"; }
+                if ((int)value == 0) { result = "Left"; } else if ((int)value == 1) { result = "Right"; }
 
                 if (result != null) return result;
             }
@@ -196,7 +196,6 @@ namespace VisualStudioBackground.App
         public PositionVTypeConverter()
             : base(typeof(PositionV))
         {
-            // empty constructor
         }
 
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -225,8 +224,7 @@ namespace VisualStudioBackground.App
             {
                 string result = null;
 
-                if ((int)value == 0) { result = "Top"; }
-                else if ((int)value == 1) { result = "Bottom"; }
+                if ((int)value == 0) { result = "Top"; } else if ((int)value == 1) { result = "Bottom"; }
 
                 if (result != null) return result;
             }
@@ -240,7 +238,6 @@ namespace VisualStudioBackground.App
         public ImageStretchTypeConverter()
             : base(typeof(ImageStretch))
         {
-            // empty constructor
         }
 
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -271,10 +268,7 @@ namespace VisualStudioBackground.App
             {
                 string result = null;
 
-                if ((int)value == 0) { result = "None"; }
-                else if ((int)value == 1) { result = "Uniform"; }
-                else if ((int)value == 2) { result = "UniformToFill"; }
-                else if ((int)value == 3) { result = "Fill"; }
+                if ((int)value == 0) { result = "None"; } else if ((int)value == 1) { result = "Uniform"; } else if ((int)value == 2) { result = "UniformToFill"; } else if ((int)value == 3) { result = "Fill"; }
 
                 if (result != null) return result;
             }
@@ -293,7 +287,7 @@ namespace VisualStudioBackground.App
 
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            IWindowsFormsEditorService editorService = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
+            var editorService = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
 
             if (editorService != null)
             {
@@ -319,17 +313,16 @@ namespace VisualStudioBackground.App
 
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            IWindowsFormsEditorService editorService = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
+            var editorService = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
 
             if (editorService != null)
             {
-                OpenFileDialog open = new OpenFileDialog();
+                var open = new OpenFileDialog();
                 open.FileName = Path.GetFileName((string)value);
                 try
                 {
                     open.InitialDirectory = Path.GetDirectoryName((string)value);
-                }
-                catch (Exception)
+                } catch (Exception)
                 {
                     // nothing to print
                 }

@@ -33,7 +33,6 @@ namespace VisualStudioBackground.Localized
             internal LocalizedDescriptionAttribute(string _key)
                 : base(Localize(_key))
             {
-                // empty constructor
             }
         }
 
@@ -48,14 +47,13 @@ namespace VisualStudioBackground.Localized
             internal LocalizedCategoryAttribute(string _key)
                 : base(Localize(_key))
             {
-                // empty constructor
             }
         }
 
         [AttributeUsage(AttributeTargets.Class
-            | AttributeTargets.Method
-            | AttributeTargets.Property
-            | AttributeTargets.Event)]
+                      | AttributeTargets.Method
+                      | AttributeTargets.Property
+                      | AttributeTargets.Event)]
         internal class LocalizedDisplayNameAttribute : DisplayNameAttribute
         {
             private static string Localize(string _key)
@@ -66,7 +64,6 @@ namespace VisualStudioBackground.Localized
             internal LocalizedDisplayNameAttribute(string _key)
                 : base(Localize(_key))
             {
-                // empty constructor
             }
         }
     }

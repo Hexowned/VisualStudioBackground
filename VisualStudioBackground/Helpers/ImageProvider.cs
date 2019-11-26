@@ -43,8 +43,7 @@ namespace VisualStudioBackground.Helpers
             if (_setting.ImageStretch == ImageStretch.None && (_bitmap.Width != _bitmap.PixelHeight || _bitmap.Height != _bitmap.PixelHeight))
             {
                 return BitmapTool.ConvertToDpi96(_bitmap);
-            }
-            else { return _bitmap; }
+            } else { return _bitmap; }
         }
 
         private void LoadImage()
@@ -66,8 +65,7 @@ namespace VisualStudioBackground.Helpers
                 {
                     _bitmap = BitmapTool.EnsureMaxWidthHeight(_bitmap, _setting.MaxWidth, _setting.MaxHeight);
                 }
-            }
-            else { _bitmap = null; }
+            } else { _bitmap = null; }
         }
 
         public ImageBackgroundType ProviderType

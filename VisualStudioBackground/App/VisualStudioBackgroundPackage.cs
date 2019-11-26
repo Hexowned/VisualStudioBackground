@@ -80,8 +80,7 @@ namespace VisualStudioBackground.App
                     _imageProviders.ForEach(x => x.NewImageAvailable += InvokeChangeImage);
 
                     ReloadSettings(null, null);
-                }
-                catch
+                } catch
                 {
                     // nothing for now
                 }
@@ -98,8 +97,7 @@ namespace VisualStudioBackground.App
                     ChangeImage();
                     GC.Collect();
                 });
-            }
-            catch
+            } catch
             {
                 // nothing for now
             }
@@ -162,8 +160,7 @@ namespace VisualStudioBackground.App
                         }
                     }
                 }
-            }
-            catch
+            } catch
             {
                 // nothing for now
             }

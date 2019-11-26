@@ -18,7 +18,7 @@ namespace VisualStudioBackground.App
     [ContentType("text")]
     [ContentType("BuildOutput")]
     [TextViewRole(PredefinedTextViewRoles.Document)]
-    internal sealed class VisualStudioBackgroundPackage : IWpfTextViewCreationListener
+    internal sealed class VisualStudioAdornmentFactory : IWpfTextViewCreationListener
     {
         private List<IImageProvider> ImageProviders;
 

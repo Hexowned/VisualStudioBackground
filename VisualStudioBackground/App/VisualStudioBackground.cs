@@ -45,8 +45,10 @@ namespace VisualStudioBackground.App
                 _adornmentLayer = view.GetAdornmentLayer("VisualStudioBackground");
                 _view.LayoutChanged += (s, e) =>
                 {
-                    if (!_hasImage) { ChangeImage(); }
-                    else
+                    if (!_hasImage)
+                    {
+                        ChangeImage();
+                    } else
                     {
                         RefreshBackground();
                     }
@@ -73,10 +75,8 @@ namespace VisualStudioBackground.App
                 SetCanvasBackground();
                 ChangeImage();
                 RefreshAdornment();
-            }
-            catch
+            } catch
             {
-                // nothing to catch for now
             }
         }
 
@@ -90,10 +90,8 @@ namespace VisualStudioBackground.App
                     ChangeImage();
                     GC.Collect();
                 });
-            }
-            catch
+            } catch
             {
-                // nothing for now
             }
         }
 
@@ -158,8 +156,7 @@ namespace VisualStudioBackground.App
 
                                 p.Children.Insert(0, grid);
                             }
-                        }
-                        else
+                        } else
                         {
                             var nib = new ImageBrush(newImage)
                             {
@@ -173,16 +170,12 @@ namespace VisualStudioBackground.App
                         }
 
                         _hasImage = true;
-                    }
-                    catch
+                    } catch
                     {
-                        // nothing for now
                     }
                 });
-            }
-            catch
+            } catch
             {
-                // nothing for now
             }
         }
 
@@ -207,14 +200,11 @@ namespace VisualStudioBackground.App
                         var c = (_wpfTextViewHost as UIElement).Opacity;
                         (_wpfTextViewHost as UIElement).Opacity = c < 0.01 ? 0.01 : c - 0.01;
                         (_wpfTextViewHost as UIElement).Opacity = c;
-                    }
-                    catch
+                    } catch
                     {
-                        // nothing for now
                     }
                 });
-            }
-            else
+            } else
             {
                 Microsoft.VisualStudio.Shell.ThreadHelper.JoinableTaskFactory.Run(async () =>
                 {
@@ -223,10 +213,8 @@ namespace VisualStudioBackground.App
                     {
                         background.Opacity = opacity < 0.01 ? 0.01 : opacity - 0.01;
                         background.Opacity = opacity;
-                    }
-                    catch
+                    } catch
                     {
-                        // nothing for now
                     }
                 });
             }
@@ -252,23 +240,28 @@ namespace VisualStudioBackground.App
                 var objname = nameprop?.GetValue(current) as string;
 
                 if (!string.IsNullOrEmpty(objname) && (objname.Equals("RootGrid", StringComparison.OrdinalIgnoreCase)
-                    || objname.Equals("MainWindow", StringComparison.OrdinalIgnoreCase))) { return; }
+                    || objname.Equals("MainWindow", StringComparison.OrdinalIgnoreCase)))
+                {
+                    return;
+                }
                 if (_isRootWindow && refd.FullName.Equals("Microsoft.VisualStudio.Text.Editor.Implementation.WpfTextView",
-                    StringComparison.OrdinalIgnoreCase)) { return; }
-                if (refd.FullName.Equals("Microsoft.VisualStudio.Editor.Implementation.WpfMultiViewHost",
-                    StringComparison.OrdinalIgnoreCase)) { isTransparent = _settings.ExpandToFillIDE && _isMainWindow; }
-                else if (refd.FullName.Equals("Microsoft.VisualStudio.Text.Editor.Implementation.WpfTextView",
                     StringComparison.OrdinalIgnoreCase))
                 {
-                    if (FindUI(current, "Microsoft.VisualStudio.Editor.Implementation.WpfMultiViewHost") == null) { return; }
+                    return;
                 }
-                else { SetBackgroundToTransparent(current, isTransparent); }
+                if (refd.FullName.Equals("Microsoft.VisualStudio.Editor.Implementation.WpfMultiViewHost",
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    isTransparent = _settings.ExpandToFillIDE && _isMainWindow;
+                } else if (refd.FullName.Equals("Microsoft.VisualStudio.Text.Editor.Implementation.WpfTextView", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (FindUI(current, "Microsoft.VisualStudio.Editor.Implementation.WpfMultiViewHost") == null) { return; }
+                } else { SetBackgroundToTransparent(current, isTransparent); }
 
                 if (current is Visual || current is Visual3D)
                 {
                     current = VisualTreeHelper.GetParent(current);
-                }
-                else
+                } else
                 {
                     current = LogicalTreeHelper.GetParent(current);
                 }
@@ -287,8 +280,7 @@ namespace VisualStudioBackground.App
                 if (current is Visual || current is Visual3D)
                 {
                     current = VisualTreeHelper.GetParent(current);
-                }
-                else
+                } else
                 {
                     current = LogicalTreeHelper.GetParent(current);
                 }
@@ -303,8 +295,7 @@ namespace VisualStudioBackground.App
             if (result.GetType().FullName.Equals("Microsoft.VisualStudio.PlatformUI.MainWindow", StringComparison.OrdinalIgnoreCase))
             {
                 return true;
-            }
-            else
+            } else
             {
                 return false;
             }
@@ -317,8 +308,7 @@ namespace VisualStudioBackground.App
                 if (_isRootWindow)
                 {
                     _wpfTextViewHost = FindUI(d, "Microsoft.VisualStudio.Text.Editor.Implementation.WpfTextView");
-                }
-                else
+                } else
                 {
                     _wpfTextViewHost = FindUI(d, "Microsoft.VisualStudio.Editor.Implementation.WpfMultiViewHost");
                 }
@@ -330,10 +320,8 @@ namespace VisualStudioBackground.App
                     {
                         if (_wpfTextViewHost == null) return;
                         RenderOptions.SetBitmapScalingMode(_wpfTextViewHost, BitmapScalingMode.Fant);
-                    }
-                    catch
+                    } catch
                     {
-                        // nothing for now
                     }
                 });
             }
@@ -348,8 +336,7 @@ namespace VisualStudioBackground.App
                 if (current is Visual || current is Visual3D)
                 {
                     current = VisualTreeHelper.GetParent(current);
-                }
-                else
+                } else
                 {
                     current = LogicalTreeHelper.GetParent(current);
                 }
@@ -377,8 +364,7 @@ namespace VisualStudioBackground.App
                         }
 
                         prop.SetValue(d, (Brush)Brushes.Transparent);
-                    }
-                    else
+                    } else
                     {
                         var d1 = _defaultThemeColor.FirstOrDefault(x => x.Key == current.GetHashCode());
                         if (d1.Value != null)
@@ -386,10 +372,8 @@ namespace VisualStudioBackground.App
                             prop.SetValue(d, (Brush)d1.Value);
                         }
                     }
-                }
-                catch
+                } catch
                 {
-                    // nothing for now
                 }
             });
         }
