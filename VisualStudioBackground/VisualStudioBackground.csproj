@@ -134,6 +134,11 @@
     <Compile Include="Settings\JsonSerializer.cs" />
     <Compile Include="Settings\Setting.cs" />
     <Compile Include="Settings\WeakEvent.cs" />
+    <Compile Include="VSPackage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VSPackage.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -148,6 +153,10 @@
     <EmbeddedResource Include="Localized\ResLocalized.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResLocalized.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VSPackage.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VSPackage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
