@@ -16,20 +16,20 @@ namespace VisualStudioBackground.Helpers
 
         public event EventHandler NewImageAvailable;
 
-        public ImageProvider(Setting setting)
-        {
-            _setting = setting;
-            _setting.OnChanged.AddEventHandler(ReloadSettings);
-
-            LoadImage();
-        }
-
         ~ImageProvider()
         {
             if (_setting != null)
             {
                 _setting.OnChanged.RemoveEventHandler(ReloadSettings);
             }
+        }
+
+        public ImageProvider(Setting setting)
+        {
+            _setting = setting;
+            _setting.OnChanged.AddEventHandler(ReloadSettings);
+
+            LoadImage();
         }
 
         private void ReloadSettings(object sender, System.EventArgs e)
